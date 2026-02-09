@@ -7,8 +7,13 @@ import { useAuthStore } from './stores/authStore';
 import { useCartStore } from './stores/cartStore';
 
 import Home from './pages/Home';
+import HomeV2 from './pages/HomeV2';
+import HomeV3 from './pages/HomeV3';
 import ProductList from './pages/ProductList';
 import ProductDetail from './pages/ProductDetail';
+import ProductDetailV2 from './pages/ProductDetailV2';
+import ProductDetailV3 from './pages/ProductDetailV3';
+import Showcase from './pages/Showcase';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import Cart from './pages/Cart';
@@ -33,10 +38,19 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route element={<Layout />}>
-          {/* Public */}
+          {/* Public - Home versions */}
           <Route path="/" element={<Home />} />
+          <Route path="/v2" element={<HomeV2 />} />
+          <Route path="/v3" element={<HomeV3 />} />
+          <Route path="/showcase" element={<Showcase />} />
+
+          {/* Public - Product pages */}
           <Route path="/products" element={<ProductList />} />
           <Route path="/products/:slug" element={<ProductDetail />} />
+          <Route path="/v2/products/:slug" element={<ProductDetailV2 />} />
+          <Route path="/v3/products/:slug" element={<ProductDetailV3 />} />
+
+          {/* Auth */}
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
 
